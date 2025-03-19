@@ -1,10 +1,19 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
-
+import { render } from '@testing-library/react-native';
 import { ThemedText } from '../ThemedText';
 
-it(`renders correctly`, () => {
-  const tree = renderer.create(<ThemedText>Snapshot test!</ThemedText>).toJSON();
+describe('ThemedText', () => {
+  it('renders correctly', () => {
+    const { getByText } = render(<ThemedText>Snapshot test!</ThemedText>);
+    const text = getByText('Snapshot test!');
+    expect(text).toBeTruthy();
+  });
 
-  expect(tree).toMatchSnapshot();
+  it('renders correctly with custom style', () => {
+    const { getByText } = render(
+      <ThemedText style={{ color: '#333' }}>Snapshot test!</ThemedText>
+    );
+    const text = getByText('Snapshot test!');
+    expect(text).toHaveStyle({ color: '#333' });
+  });
 });
