@@ -44,8 +44,8 @@ Una aplicación móvil desarrollada con React Native y TypeScript que permite vi
 
 1. Clonar el repositorio
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
-   cd RNCocosChallenge
+   git clone https://github.com/dbracamonte/rn-cocos-challenge.git
+   cd rn-cocos-challenge
    ```
 
 2. Instalar dependencias
